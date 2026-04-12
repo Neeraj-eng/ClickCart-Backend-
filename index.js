@@ -62,5 +62,4 @@ app.get("/", (req, res) => {
 app.use("/api", router);
 
 
-// export default serverless(app);
-app.listen(3000);
+export default serverless(app);
