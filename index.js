@@ -5,9 +5,9 @@ import fileUpload from "express-fileupload";
 import cors from "cors";
 import dotenv from "dotenv";
 
-import { connect } from "../config/mongoconnect.js";
-import { Cloudinaryconnect } from "../config/Cloudinaryconnect.js";
-import router from "../routes/Router.js";
+import { connect } from "./config/mongoconnect.js";
+import { Cloudinaryconnect } from "./config/Cloudinaryconnect.js";
+import router from "./routes/Router.js";
 
 dotenv.config();
 const app = express();
