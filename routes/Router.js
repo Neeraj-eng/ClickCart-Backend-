@@ -4,6 +4,7 @@ import {signup,login, logout} from "../controllers/authn.js"
 import {imageupload} from "../Middleware/imageuplod.js"
 import {addProduct, searchProducts, getProducts, getProduct, deleteProduct, updateProduct} from "../controllers/product_manage.js"
 import {isAuthenticate} from "../Middleware/authz.js"
+import { takeinfo } from "../ai/openai.js";
 
 router.post("/signup",signup)
 router.post("/login",login)
@@ -14,6 +15,7 @@ router.get("/products",getProducts)
 router.get("/product/:id",getProduct)
 router.delete("/product/:id",isAuthenticate,deleteProduct)
 router.put("/product/:id",isAuthenticate,imageupload,updateProduct)
+router.post("/useai",takeinfo)
 
 router.get("/isAuth",isAuthenticate,(req,res) => {
     res.status(200).json({
