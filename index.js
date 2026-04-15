@@ -40,4 +40,6 @@ app.get("/", (req, res) => {
 app.use("/api", router);
 
 
-export default serverless(app);
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
